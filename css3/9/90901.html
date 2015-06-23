@@ -1,0 +1,217 @@
+<!DOCTYPE html>											<!-- 文档HTML5格式的定义        -->
+<html>
+	<head>
+		<meta charset="utf-8">							<!--  HTML5的页面字符设置       -->
+		<title>HTML5+CSS3布局示例(学习)</title>
+        [if IE]> <script src="html5.js"></script> <![endif]		<!-- 让HTML5兼容IE早期版本      -->
+ 	<style>
+        body{
+            background: #cccccc;
+            font-family:"Trebuchet MS", Tahoma, "Geneva CE", lucida;
+            margin: 10px auto;
+            max-width:800px;
+            border: solid;
+            border-color: #FFFFFF;
+            }
+        /*text-decoration：none | underline | overline | line-through | blink
+默认值：none 取值：none：指定文字无装饰 underline：指定文字的装饰是下划线
+overline：指定文字的装饰是上划线 line-through：指定文字的装饰是贯穿线 blink：指定文字的装饰是闪烁。写本文档时仅Firefox和Opera支持该参数值
+说明：检索或设置对象中的文本的装饰。*/
+        a{ text-decoration:none; color:#FFF; }	 			/* 整个body页面的p和a适用          */
+        p { color: #F36; }
+        /*把图像设置为列表中的列表项目标记：*/
+        ul { margin:0px; padding:0px; list-style:none;}
+
+        h2,h3 { 											/* 设定整个body内的h2和h3的共同属性*/
+            text-align: center;		 					/* 文本居中					*/
+            }
+
+        header{
+            background-color:#f47d31; /*页头背景色*/
+             color: #FFFFFF;/*页头这两个字及li 表示圆点改变了*/
+             text-align: center;/*文字中央对齐*/
+             margin-bottom: 15px;/*底部外边距15px*/
+            }
+        article{
+            background-color: #eee;/*定义文章主体区背景颜色 整个body页面的article适用*/
+            }
+
+        header,section,aside,footer{/*几大区域使用圆角及阴影*/
+            /*语法： box-shadow：none | <shadow> [ , <shadow> ]* <shadow> = inset? && [ <length>{2,4} && <color>? ] 默认值： none 取值： none： 无阴影 <length>①： 第1个长度值用来设置对象的阴影水平偏移值。可以为负值 <length>②： 第2个长度值用来设置对象的阴影垂直偏移值。可以为负值 <length>③： 如果提供了第3个长度值则用来设置对象的阴影模糊值。不允许负值 <length>④： 如果提供了第4个长度值则用来设置对象的阴影外延值。不允许负值 <color>： 设置对象的阴影的颜色。请参阅颜色值 inset： 设置对象的阴影类型为内阴影。该值为空时，则对象的阴影类型为外阴影*/
+            -webkit-box-shadow: 0px 0px 6px #757575; /* must use for IE                   */
+            -moz-box-shadow: 0px 0px 6px #757575;
+            box-shadow: 0px 0px 6px #757575;
+            /*border-radius：[ <length> | <percentage> ]{1,4} [ / [ <length> | <percentage> ]{1,4} ]? 默认值：0 取值： <length>： 用长度值设置对象的圆角半径长度。不允许负值 <percentage>： 用百分比设置对象的圆角半径长度。不允许负值*/
+            -moz-border-radius: 2px; 						/* Firefox                           */
+            -webkit-border-radius: 2px; 					/* Safari, Chrome                    */
+            border-radius: 2px;
+            }
+
+        nav,article{
+            margin: 10px;
+            padding: 10px;
+            display: block;
+            /*语法：display：none | inline | block | list-item | inline-block | table | inline-table | table-caption | table-cell | table-row | table-row-group
+             | table-column | table-column-group | table-footer-group | table-header-group | compact | run-in | ruby | ruby-base | ruby-text | ruby-base-group
+             | ruby-text-group
+取值：none：
+隐藏对象。与visibility属性的hidden值不同，其不为被隐藏的对象保留其物理空间
+inline：指定对象为内联元素。
+block：指定对象为块元素。
+list-item：指定对象为列表项目。
+inline-block：指定对象为内联块元素。（CSS2）
+table：指定对象作为块元素级的表格。类同于html标签<table>（CSS2）
+inline-table：指定对象作为内联元素级的表格。类同于html标签<table>（CSS2）
+table-caption：指定对象作为表格标题。类同于html标签<caption>（CSS2）
+table-cell：指定对象作为表格单元格。类同于html标签<td>（CSS2）
+table-row：指定对象作为表格行。类同于html标签<tr>（CSS2）
+table-row-group：指定对象作为表格行组。类同于html标签<tbody>（CSS2）
+table-column：指定对象作为表格列。类同于html标签<col>（CSS2）
+table-column-group：指定对象作为表格列组显示。类同于html标签<colgroup>（CSS2）
+table-header-group：指定对象作为表格标题组。类同于html标签<thead>（CSS2）
+table-footer-group：指定对象作为表格脚注组。类同于html标签<tfoot>（CSS2）
+compact：分配对象为块对象或基于内容之上的内联对象（CSS3）
+run-in：分配对象为块对象或基于内容之上的内联对象（CSS3）
+ruby：将对象作为表格脚注组显示（CSS3）
+ruby-base：将对象作为表格脚注组显示（CSS3）
+ruby-text：将对象作为表格脚注组显示（CSS3）
+ruby-base-group：将对象作为表格脚注组显示（CSS3）
+ruby-text-group：将对象作为表格脚注组显示（CSS3）*/
+
+            }
+
+        header#page_header nav {		 						/* header#page_header nav的属性      */
+            padding: 0 0 10px 0;
+            }
+
+        header#page_header nav ul li { 							/* header#page_header nav ul li属性  */
+            padding: 0;
+            margin: 0 20px 0 0;
+            display: inline;
+            }
+        #posts{
+            display: block;
+            /*float：none | left | right 默认值： none 取值： none： 设置对象不浮动 left： 设置对象浮在左边 right： 设置对象浮在右边 说明： 该属性的值指出了对象是否及如何浮动。请参阅clear属性  */
+            float: left;/*section left一浮动，给右边让出了路，马上aside就由下面填补了右边的区域, right就反之*/
+            width: 70%;
+            /*auto： 无特定高度值，取决于其它属性值  也可类似width 用长度值来定义高度。： 用百分比来定义高度。*/
+            height: auto;
+            background-color: #F69;
+            margin-bottom: 15px;
+            }
+        #posts article footer { /* section#posts article footer属性  */
+            background-color: #039;
+            /*clear：none | left | right | both 默认值： none 取值： none： 允许两边都可以有浮动对象 both： 不允许有浮动对象 left： 不允许左边有浮动对象 right： 不允许右边有浮动对象 说明： 该属性的值指出了不允许有浮动对象的边。请参阅float属性*/
+            clear: both;
+            height: 50px;
+            display: block;
+            /*反白*/
+            color: #FFFFFF;
+            text-align: center;
+            padding: 15px;
+            }
+
+        #posts aside{
+            background: #069;
+            display: block;
+            float: right;
+            width: 35%;
+            margin-left: 5%;
+            font-size: 20px;
+            /*检索或设置对象的行高。即字体最底端与字体内部顶端之间的距离。*/
+            line-height: 40px;
+            margin-bottom:20px;
+            }
+          /*单独最外边区域的aside*/
+        #sidebar { /* aside#sidebar属性                 */
+            display: block;
+            float: right;
+            width: 28%;
+            height: auto;
+            background-color: #699;
+            }
+
+        #sidebar li { /* li 一起使用两张背景图片 		   */
+            padding:5px 15px;
+            /*repeat-x： 背景图像在横向上平铺 */
+            background:url(li_icon.gif) no-repeat center left,url(dot.gif) repeat-x bottom;
+            }
+
+        #page_footer { /* footer#page_footer属性		   */
+            display: block;
+            clear: both;
+            width: 100%;
+            display: block;
+            color: #FFFFFF;
+            text-align: center;
+            background-color: #06C;
+            }
+ 	</style>
+	</head>
+  	<body>
+    <header id="page_head"> <!-- 使用header定义页面头部     -->
+        <h1>页头</h1>
+        <nav>                   <!-- 使用nav定义页面导航条      -->
+            <ul>
+                <li><a href="#">首页</a> </li>
+                <li><a href="#">相册</a> </li>
+                <li><a href="#">日志</a> </li>
+                <li><a href="#">收藏</a> </li>
+            </ul>
+        </nav>
+    </header>
+    <!--section 与 aside 是相对应的。-->
+    <section id="posts">  	<!-- 使用section定义页面主体区  -->
+        <h2>Section</h2>
+        <article class="post">  	<!-- 使用article定义文章区      -->
+            <h2>section区域内上部article的文章标题</h2>
+            <header>
+                <h3>section区域内上部article的header部分</h3>
+            </header>
+            <aside>
+                <h3>section区域内上部article的aside部分</h3>
+            </aside>
+            <p>这里是section区域内p段落文章的内容...</p>
+            <p>这里是section区域内p段落文章的内容...</p>
+            <footer>								<!-- 使用footer定义文章底部信息 -->
+                <h3>这里是section区域内上部article的Footer</h3>
+            </footer>
+        </article>
+        <article class="post">
+            <h2>section区域内下部article的文章标题</h2>
+            <header>
+                <h3>section区域内下部article的header部分</h3>
+            </header>
+            <aside>
+                <h3>section区域内下部article的aside部分</h3>
+            </aside>
+            <p>这里是section区域内p段落文章的内容...</p>
+            <p>这里是section区域内p段落文章的内容...</p>
+            <footer>								<!-- 使用footer定义文章底部信息 -->
+                <h3>这里是section区域内下部article的Footer</h3>
+            </footer>
+        </article>
+    </section>
+    <aside id="sidebar">
+        <h2>Aside</h2>
+        <header>
+            <h3>aside区域内的header部分</h3>
+        </header>
+        <nav>										<!-- 使用nav定义侧边导航       -->
+            <h3>栏目标题</h3>
+            <ul>
+                <li><a href="#">aside标题一</a></li>
+                <li><a href="#">aside标题二</a></li>
+                <li><a href="#">aside标题三</a></li>
+                <li><a href="#">aside标题四</a></li>
+                <li><a href="#">aside标题五</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <footer id="page_footer">
+        <h2>总页面的Footer</h2>
+    </footer>
+ 	</body>
+</html>
+

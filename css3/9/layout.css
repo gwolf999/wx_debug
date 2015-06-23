@@ -99,10 +99,10 @@ body {					 							/* 整个页面的属性设定			*/
  footer#page_footer { 								/* footer#page_footer属性		   */
      display: block;
      clear: both;
-     width: 100%;
-     display: block;
-     color: #FFFFFF;
-     text-align: center;
-     background-color: #06C;
+	 width: 100%;
+	 display: block;
+	 color: #FFFFFF;
+	 text-align: center;
+	 background-color: #06C;
  }
 

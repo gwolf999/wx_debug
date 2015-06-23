@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        /*选中div中第一个元素，且元素类型为p标签，设定字体颜色*/
+        /*E:first-child{ sRules } 说明： 匹配父元素的第一个子元素E。 要使该属性生效，E对象必须是某个对象的子元素。
+        在上述代码中，如果我们要设置第一个li的样式，那么代码应该写成li:first-child{sRules}，而不是ul:first-child{sRules}。其它相关的伪类都如此。*/
+        p:first-child{COLOR:RED}
+
+        /*选中div元素中最后一个元素，且元素类型为p标签  匹配父元素的最后一个子元素E。 要使该属性生效，E对象必须是某个对象的子元素。*/
+        p:last-child{color:green}
+
+        /*选中div元素中指定的元素 且元素类型为P标签  匹配父元素的第n个子元素E。 要使该属性生效，E对象必须是某个对象的子元素。*/
+        p:nth-child(4){color:#ffff00}
+
+     /*E:nth-last-child(n){ sRules } 说明： 匹配父元素的倒数第n个子元素E。要使该属性生效，E对象必须是某个对象的子元素。
+     E:first-of-type{ sRules } 说明： 匹配同类型中的第一个同级兄弟元素E。
+     ....中间几个与前面的类似
+     E:nth-of-type(n){ sRules } 说明： 匹配同类型中的第n个同级兄弟元素E。*/
+
+        /*选中div中的唯一的一个元素，且该元素必须为p标签
+        匹配父元素仅有的一个子元素E。要使该属性生效，E对象必须是某个对象的子元素。
+        所以只要选择下面的DIV*/
+        p:only-child{background:red}
+    </style>
+</head>
+<body>
+<div>
+    <p>N种不能取的女人:</p>
+    <p>女导演:停，再来一次</p>
+    <p>女售票员:里面空的很，再往里挤一挤</p>
+    <p>女网管:上不上，不上后面还等着上呢</p>
+    <p>女护士:快上床，把裤子脱下来.</p>
+    <p>女编辑:欢迎来稿，长短不限</p>
+    <p>女登山队员:你就算死也得爬上来</p>
+    <p>女幼师:小弟弟，老实点</p>
+    <p>女交警:我说不准停，就不准停！</p>
+</div>
+
+<div>
+    <p>N种不能取的女人:</p>
+</div>
+</body>
+</html>

@@ -2,12 +2,15 @@
 <meta charset="UTF-8">
 <title>多列布局</title>  
 <style>
-body {
+body {/*column-count：<integer> | auto 默认值：auto 取值： <integer>： 用整数值来定义列数。不允许负值 auto： 根据column-width自定分配宽度*/
 	-webkit-column-count: 3;
+    /*column-gap：<length> | normal 默认值：normal 取值： <length>： 用长度值来定义列与列之间的间隙。不允许负值 normal： 与font-size大小相同。假设该对象的font-size为16px，则normal值为16px，类推。*/
 	-webkit-column-gap:3em;
+    /*说明： 设置或检索对象的列数和每列的宽度。复合属性 对应的脚本特性为columns。*/
 	columns: 250px 3;
 	cloumn-gap:3em;
 	-webkit-column-rule:dashed 2px gray;
+    /*column-rule：[ column-rule-width ] || [ column-rule-style ] || [ column-rule-color ] 默认值：看每个独立属性 取值： [ column-rule-width ]： 设置或检索对象的列与列之间的边框厚度。 [ column-rule-style ]： 设置或检索对象的列与列之间的边框样式。 [ column-rule-color ]： 设置或检索对象的列与列之间的边框颜色。 说明： 设置或检索对象的列与列之间的边框。复合属性。参阅border属性*/
 	column-rule:dashed 2px gray;
 }
 
