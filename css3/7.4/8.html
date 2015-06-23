@@ -1,0 +1,53 @@
+<!doctype html>
+<style>
+    
+    /*input:checked{width:100PX;height:100px}*/
+    
+    input:checked+span{color:red}
+    
+    input:disabled{background:#ff0}
+    
+    input[type='password']:enabled{background:green}
+    
+    input[name='user']:focus{background:red}
+</style>
+<form action="#" method="post">
+    <table border="1" width="500" align="center">
+        <tr>
+            <td>ID:</td>
+            <td><input type="text" name="id" disabled value="12138" ></td>
+        </tr>
+        <tr>
+            <td>用户名:</td>
+            <td><input type="text" name="user" ></td>
+        </tr>
+        <tr>
+            <td>密码:</td>
+            <td><input type="password" name="user"></td>
+        </tr>
+        <tr>
+            <td>性别:</td>
+            <td>
+                <input type="radio" name="sex" value="0"><span>女</span>
+                <input type="radio" name="sex" value="1"><span>男</span>
+                <input type="radio" name="sex" value="2"><span>保密</span>
+            </td>
+        </tr>
+        <tr>
+            <td>爱好:</td>
+            <td>
+                <input type="checkbox" name="hobby[]" value="0"><span>篮球</span>
+                <input type="checkbox" name="hobby[]" value="1"><span>足球</span>
+                <input type="checkbox" name="hobby[]" value="2"><span>冰球</span>
+                <input type="checkbox" name="hobby[]" value="3"><span>月球</span>
+                <input type="checkbox" name="hobby[]" value="4"><span>地球</span>
+                <input type="checkbox" name="hobby[]" value="5"><span>火球</span>
+            </td>
+        </tr>
+        <tr>
+            <td COLSPAN="2">
+                <input type="submit" value="提交">
+            </td>
+        </tr>
+    </table>
+</form>

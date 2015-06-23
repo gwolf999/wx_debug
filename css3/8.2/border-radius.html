@@ -1,0 +1,61 @@
+<!doctype html>
+<meta charset="utf-8">
+<style>
+	.one{
+		width:200px;
+		height:100px;
+		border:2px solid green;
+		border-radius:10px;
+	}
+	.two{
+		width:200px;
+		height:100px;
+		border:2px solid green;
+		border-radius:50px/20px;
+	}
+	
+	.three{
+		width:200px;
+		height:100px;
+		border:2px solid green;
+		border-radius:10px 20px 30px 40px;
+	}
+	
+	.four{
+		width:200px;
+		height:100px;
+		border:2px solid green;
+		/*
+		格式:border-radius : 
+		左上角水平半径 右上角水平半径 右下角的水平半径 左下角水平半径 / 左上角垂直半径 右上角垂直半径 右下角的垂直半径 左下角垂直半径 
+		*/
+		border-radius:10px 20px 30px 40px/40px 30px 20px 10px;
+	}
+	
+	/*其他格式；
+		border-radius: 10px 30px ;
+		border-radius: 10px 30px 50px;
+	*/
+	
+	.five{
+		width:200px;
+		height:100px;
+		border:2px solid green;
+		border-top-right-radius:20px 20PX
+	}
+	
+</style>
+<!---同时设置4个角的圆角的 水平和垂直的半径--->
+<div CLASS="one"></div>
+<hr>
+<!---同时设置4个角的圆角的 分别水平和垂直的半径--->
+<div CLASS="two"></div>
+<hr>
+<!--单独设置每个角的 水平和垂直半径-->
+<div class="three"></div>
+<hr>
+<!--单独设置每个角的 分别水平和垂直半径-->
+<div class="four"></div>
+<hr>
+<!--单独设置1个角的 水平和垂直半径-->
+<div class="five"></div>

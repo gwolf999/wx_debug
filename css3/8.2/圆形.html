@@ -1,0 +1,96 @@
+<!doctype html>
+<style>	
+	.yuan{
+		width:200px;
+		height:200px;
+		border:2px solid red;
+		border-radius:100px/100px;
+	}
+	
+	.tuoyuan{
+		width:200px;
+		height:100px;
+		border:2px solid red;
+		border-radius:100px/50px
+	}
+	
+	.zidan{
+		width:200px;
+		height:100px;
+		border:2px solid red;
+		border-radius:100px 0 0 100px / 50px 0 0 50px
+	}
+	
+	
+	.banyuan{
+		width:100px;
+		height:200px;
+		border:2px solid red;
+		border-radius:0px 100px 100px 0px/100px 100px 100px 100px
+	}
+	
+	.banyuan2{
+		width:200px;
+		height:100px;
+		border-top:2px solid red;
+		border-left:2px solid red;
+		border-right:2px solid red;
+		border-bottom:100px solid red;
+		border-radius:100px;
+		
+	}
+	
+	.taiji{
+		width:200px;
+		height:100px;
+		border-top:2px solid red;
+		border-left:2px solid red;
+		border-right:2px solid red;
+		border-bottom:100px solid red;
+		border-radius:100px;
+		position:relative;
+	}
+	
+	.taiji::before{
+		display:block;
+		content:'';
+		width:20px;
+		height:20PX;
+		background:red;
+		border:40px #fff  solid;
+		border-radius:50px;
+		position:absolute;
+		top:50px;
+	}
+	
+	.taiji::after{
+		display:block;
+		content:'';
+		width:20px;
+		height:20PX;
+		background:#FFF;
+		border:40px red  solid;
+		border-radius:50px;
+		position:absolute;
+		top:50px;
+		right:0;
+	}
+</style>
+<!--圆形-->
+<div class="yuan"></div>
+<hr>
+<!--椭圆-->
+<div class="tuoyuan"></div>
+<hr>
+<!--子弹头-->
+<div class="zidan"></div>
+<hr>
+<!--半圆形-->
+<div class="banyuan"></div>
+
+<hr>
+<!--实心半圆-->
+<div class="banyuan2"></div>
+<hr>
+<!--太极图案-->
+<div class="taiji"></div>

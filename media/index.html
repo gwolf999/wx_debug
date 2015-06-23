@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>响应式布局(Media Queries模块)</title>
+		<style>
+			body,h2 { margin:0px; padding:0px; color:white; }
+			section#main, header, aside, footer { background:#333333; margin:5px 0; }
+			/*全局的样式，不指定的屏幕区载就使用全局样式，指定的屏幕也可以继承并修改这一部分 */
+			h2 { text-align:center; font-size:3em; }				/* 字体设置3em */
+			/* 整体容器 宽度960px, 居中 */
+			section#container { width:960px; margin:auto; }
+			/* 页头 宽度100% 高度100px */
+			header { float:left; width:100%; line-height:100px; }
+			/* 左边条 宽度200px 高度400px */
+			aside#left { float:left; width:200px; line-height:400px; }
+			/* 主体区 宽度540px 高度400px */
+			section#main { float:left; width:540px; line-height:400px; margin-left:10px; }
+			/* 右边条 宽度200px 高度400px */
+			aside#right { float:right; width:200px;  line-height:400px; }
+			/* 页脚 宽度100% 高度100px */
+			footer { float:left; width:100%; line-height:80px;}
+
+			/* 屏幕分辨率在1024以上使用的样式， 按电脑屏幕显示模块 */
+			@media screen and (min-width:1024px) {
+				h2 { text-align:center; font-size:3.5em; color:yellow; } /* 字体设置3.5em */
+				section#container { width:960px; margin:auto;}
+				header { float:left; width:100%; }
+				aside#left { float:left; width:200px; }
+				section#main { float:left; margin-left:10px; width:540px; }
+				aside#right { width:200px; float:right; }
+				footer { float:left; width:100%; }				
+			}
+
+			/* 屏幕分辨率在640px和1024px之间使用的样式，右边条次要模块不显示 */
+			@media screen and (min-width:640px) and (max-width: 1000px) {
+				h2 { text-align:center; font-size:2.5em; color:#F0F; } /* 字体设置2.5em */
+				section#container { width:600px; margin:auto;}
+				aside#left { float:left; width:160px; }
+				section#main { float:left; margin-left:10px; width:430px; }
+				/* 次要区块可以不在屏幕上显示 */
+				aside#right { display:none; }	
+			}
+			/* 屏幕分辨率在640以下使用的样式, 从上往下排列5行显示 */
+			@media screen  and (max-width: 639px) {
+				h2 { text-align:center; font-size:2em; color:#0F0; }  /* 字体设置2em */
+				section#container { width:400px; margin:auto; }
+				aside#left { float:left; width:100%; line-height:100px; }
+				section#main { float:left; width:100%; line-height:200px; margin-left:0px; }
+				aside#right { float:left; width:100%; line-height:100px; }
+			}
+		</style>
+	<head>
+
+	<body>
+		<section id="container">
+			<header>   				<h2>header</h2>     </header>   <!--  页头   -->
+			<aside id="left">       <h2>left</h2>  		</aside>    <!--  左边条 -->
+			<section id="main">  	<h2>main</h2>       </section>  <!--  主体区 -->
+			<aside id="right">		<h2>right</h2> 		</aside>    <!--  右边条 -->
+			<footer>   				<h2>footer</h2>     </footer>   <!--  页脚   -->
+		</section>
+	</body>	
+</html>	
+

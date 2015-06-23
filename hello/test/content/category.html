@@ -1,0 +1,76 @@
+{template "content","header"}
+
+	<div class="container" style="margin-top:10px;">
+		<div class="row well well-sm" style="background:#FFF;">	
+			<div class="col-md-6 col-sm-6 panel panel-info" style="background:url({IMG_PATH}v9/cat_hot_bg.png) left top no-repeat">		
+				<div class="content">
+				{pc:content  action="position" posid="10" catid="$catid" thumb="1" order="listorder DESC" num="2"}
+					{loop $data $v}
+						<h4>&nbsp;&nbsp;<a class="text-info" href="{$v[url]}" target="_blank"{title_style($v[style])}>{$v[title]}</a></h4>
+						<p><img class="pull-left" style="margin-right:10px" src="{thumb($v[thumb],90,60)}" width="90" height="60" />{str_cut(strip_tags($v[description]), 200)}</p>
+						<div class="clearfix"><hr /></div>
+					{/loop}
+				{/pc}
+			
+				{pc:content  action="lists" catid="$catid" order="id DESC" num="4"}
+					<ul class="list-unstyled">
+					{loop $data $k $v}
+						<li style="line-height:27px;">·<a class="text-info" href="{$v[url]}" title="{$v[title]}" target="_blank"{title_style($v[style])}>{str_cut($v[title], 100)}</a></li>
+					{/loop}
+					</ul>
+				{/pc}
+				</div>
+			</div>
+	
+			<div class="col-md-6 col-sm-6">
+				<div class="panel panel-info" style="background:#FFF;">
+					<div class="panel-body">
+						{pc:content  action="lists" catid="$catid" order="listorder ASC" thumb="1" num="5"}
+							<div class="col-auto" >
+							{loop $data $k $v}
+								<div class="title" style="padding:5px;margin-bottom:8px;border-bottom:#099 dashed 1px;">
+								<img style="margin-right:8px;" class="pull-left" src="{thumb($v[thumb], 82, 50)}"  alt="{$v[title]}" width="82" height="50" />
+								<p ><b><a class="text-info" href="{$v[url]}" title="{$v[title]}" >{str_cut($v[title], 100)}</a></b></br>{str_cut(strip_tags($v[description]), 120)}</p>
+	
+								<div class="clearfix"></div>
+								</div>
+							{/loop}
+							</div>
+						{/pc}
+					</div>
+				</div>
+			</div>	
+		<!--第二屏-->
+
+			{php $j=1;}
+			{loop subcat($catid) $v}
+			{php if($v['type']!=0) continue;}
+			<div class="col-md-4 col-sm-6" style="margin-bottom:8px;">
+				<h2 class="h4" style="border-bottom:#055b95 solid 3px; padding-left:0.5em; padding-bottom:0.3em">
+					<b class="pull-left">{$v[catname]}</b><a style=" font-size:12px; margin-top:5px" class="pull-right" href="{$v[url]}">>>更多</a>
+					<div class="clearfix"></div> 
+				</h2>
+				<div class="panel-body wxfl-li">
+					{pc:content action="lists" catid="$v[catid]" thumb="1" num="1" order="id DESC"}
+						{loop $data $v}
+							<a href="{$v['url']}" target="_blank" title="{$v['title']}">
+							<img  src="{thumb($v[thumb],320,100)}" width="320" height="100"/></a>
+				        {/loop}
+                        
+						
+					{/pc}
+			
+					<ul class="list-unstyled" style="line-height:2em;">
+					{pc:content action="lists" catid="$v[catid]" num="8" order="id DESC"}
+						{loop $data $v}
+							<li>☆<a  class="h6" href="{$v['url']}" target="_blank" title="{$v['title']}"{title_style($v[style])}>{str_cut($v['title'],50)}</a></li>
+						{/loop}
+					{/pc}
+					</ul>
+				</div>
+			</div>
+			{/loop}
+		</div>
+	</div>
+	
+{template "content","footer"}

@@ -1,0 +1,282 @@
+{template "content","header"}
+	<!-- 图片轮播 -->
+	<script src="{WEB_PATH}statics/test/js/bootstrap-carousel.js"></script>
+	<div class="container" style="margin-top:1em">
+		<div class="row">
+			<div class="col-md-4 hidden-xs col-sm-6 well well-sm" style="background:#fff">
+				
+			{pc:content  action="position" posid="1" thumb="1" order="listorder DESC" num="5"}
+			
+				<div id="myCarousel" class="carousel slide">
+				<ol class="carousel-indicators">
+					{php $nn=0}
+					{loop $data $r}	
+						<li data-target="#myCarousel" data-slide-to="{$nn}" {if $nn==0 }class="active"{/if}></li>
+						{php $nn++}
+					{/loop}
+				</ol>
+    
+				<!-- Carousel items -->
+				<div class="carousel-inner" style="height:320px">
+					{loop $data $r}	
+							<div class="item {if $n==1}active{/if}"><a href="{$r['url']}" target="_blank"><img src="{thumb($r['thumb'],373,315)}" alt="{$r['title']}" width="373" height="315" /></a></div>
+					{/loop}
+				</div>
+				<!-- Carousel nav -->
+				<a class="carousel-control left" href="#myCarousel"  data-slide="prev">&lsaquo;</a>
+				<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+				</div>
+			{/pc}
+			<script>  $('.carousel').carousel({ interval: 2000 })  </script>
+			</div>
+			
+			
+			<div class="col-md-8">
+				<div class="row">
+					<div class="col-md-8 hidden-xs hidden-sm">
+						<div class="well-sm" style="border:#CCC solid 1px; background: #FAFFF7;" >
+						{pc:content  action="position" posid="9" order="listorder DESC" num="1"}
+							{loop $data $r}
+								<h2 class="h4 text-center"><a href="{$r['url']}"><b>{$r[title]}</b></a></h2>
+								<p class="h6" style="text-indent:2em; line-height:2em">{str_cut($r[description],200)}[<a href="{$r['url']}">查看全文</a>]</p>
+							{/loop} 
+						{/pc}  
+		  
+						<ul class="list-unstyled list-inline" style="line-height:1.8em">
+						{pc:content  action="position" posid="9" order="listorder DESC" num="12"}
+							{loop $data $r}
+								<li>♦&nbsp;<a class="h6" title="{$r[title]}" href="{$r['url']}">{str_cut($r['title'],33)}</a></li>
+							{/loop}  
+						{/pc} 
+						</ul>
+			
+						<ul class="list-unstyled list-inline" style="line-height:1.8em">
+						{pc:content  action="position" posid="1" order="listorder DESC" num="15"}
+							{loop $data $r}
+							<li>♦&nbsp;<a class="h6" title="{$r[title]}" href="{$r['url']}">{str_cut($r['title'],33)}</a></li>
+							{/loop}  
+						{/pc} 
+						</ul>
+						</div>
+					</div>
+	  
+					<div class="col-md-4  col-sm-5 col-sm-offset-1 col-md-offset-0" style="border:#CCC solid 1px;">
+						<h2 class="h4" style=" border-bottom:#055b95 solid 3px; padding-left:0.5em; padding-bottom:0.3em"><b>精彩推荐</b></h2>
+			
+						<ul class="list-unstyled" style="line-height:1.8em">
+			
+						{pc:content  action="position" posid="9" order="listorder DESC" num="11"}
+						{loop $data  $r}
+							<li>♦&nbsp;<a class="h6" title="{$r[title]}" href="{$r['url']}">{str_cut($r['title'],50)}</a></li>
+						{/loop}  
+						{/pc} 
+
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	
+	
+	
+	<div class="container">
+		<!-- 第二行 -->
+		<div class="row" style="border:#CCC solid 1px;">
+			
+			{loop subcat("55") $r}
+		
+				<div class="col-md-3 col-xs-12 col-sm-6" >
+					<h2 class="h4" style=" border-bottom:#055b95 solid 3px; padding-left:0.5em; padding-bottom:0.3em">
+						<b class="pull-left">{$r[catname]}</b><a style=" font-size:12px; margin-top:5px" class="pull-right" href="{$r[url]}">>>更多</a>
+						<div class="clearfix"></div> 
+					</h2>
+			
+					<div class="pull-left" style=" padding-top:5px; margin-right:5px;">
+					{pc:content  action="lists" catid="$r[catid]" order="updatetime DESC" thumb="1" num="2" return="info"}
+						{loop $info $v}
+							<a href="{$v['url']}">	<img width="100" height="100" src="{thumb($v[thumb],100,100)}" title="{$v[title]}" alt="{$v[title]}" /></a>
+							<p class="text-center"><a class="h6" href="{$v['url']}" title="{$v[title]}">{str_cut($v['title'],25)}</a><p>
+						{/loop}
+					{/pc} 
+					</div>
+		  
+					{pc:content action="lists" catid="$r[catid]" num="11" order="id DESC" return="info"}
+					<ul class="list-unstyled" style="line-height:1.8em">
+						{loop $info $v}
+							<li>♦&nbsp;<a class="h6" href="{$v['url']}" title="{$v[title]}">{str_cut($v['title'],35)}</a></li>
+						{/loop}
+					</ul>
+					{/pc}
+				</div>
+			
+			{/loop}
+		
+		</div>
+		<!-- 第三行 -->
+		<div class="row" style="border:#CCC solid 1px; margin-top:1em">
+			{pc:content  action="position" posid="12" thumb="1" order="listorder DESC" num="12"}
+			<div class="col-md-12">
+				<h2 class="h4" style="border-bottom:#055b95 solid 3px; padding-left:0.5em; padding-bottom:0.3em">
+					<b class="pull-left">图个痛快</b><a style=" font-size:12px; margin-top:5px" class="pull-right" href="{$r[url]}">>>更多</a>
+					<div class="clearfix"></div> 
+				</h2>
+				{loop $data $r}
+					<div class="col-md-2 col-sm-3 col-xs-6 text-center" style="margin-bottom:5px">
+						<a class="img-thumbnail" style="width:140px; height:140px;" href="{$r[url]}" title="{$r[title]}"><img src="{thumb($r[thumb] ,140,140)}" alt="{$r[title]}" title="{$r[title]}" width="100%" height="auto"/></a>
+						<p><a href="{$r[url]}">{str_cut($r[title],30)}</a></p>
+					</div>
+				{/loop}
+			</div>
+			{/pc}
+		</div>
+		
+		<!-------列表内容区------->
+		<div class="row " style="margin-top:1em; background: #eee">
+			<div class="col-md-8 well-sm"  >
+				<div class="row">
+					<div class="col-md-6 col-sm-6"> 
+						{pc:content action="lists" catid="10" order="id DESC" thumb="" moreinfo=""  num="11" }
+						<div class="well-sm" style=" margin-bottom:1em; background:#FFF">	 	
+							<h2 class="h4" style=" border-bottom:#055b95 solid 3px; padding-left:0.5em; padding-bottom:0.3em">
+								<b class="pull-left">新闻热议</b><a style=" font-size:12px; margin-top:5px" class="pull-right" href="/html/wxmw/xwry/">>>更多</a>
+								<div class="clearfix"></div> 
+							</h2>
+		 
+							<ul class="list-unstyled" style="line-height:1.8em">
+							{loop $data $n $r}
+								<li>♦&nbsp;<a class="h6" href="{$r['url']}" title="{$r['title']}">{str_cut($r[title],70)}</a></li>
+							{/loop}
+							</ul>
+						</div>
+						{/pc}
+					</div>
+					
+					<div class="col-md-6 col-sm-6">
+						{pc:content  action="lists" catid="11" order="id DESC" num="11"}				
+						<div class="well-sm" style="background:#FFF; margin-bottom:1em">	 	
+							<h2 class="h4" style=" border-bottom:#055b95 solid 3px; padding-left:0.5em; padding-bottom:0.3em">
+								<b class="pull-left">说教励志</b><a style=" font-size:12px; margin-top:5px" class="pull-right" href="/html/wxmw/sjlz/">>>更多</a>
+								<div class="clearfix"></div> 
+							</h2>
+		 
+							<ul class="list-unstyled" style="line-height:1.8em">
+							{loop $data $n $r}
+								<li>♦&nbsp;<a class="h6" href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],70)}</a></li>
+							{/loop}
+							</ul>
+						</div>
+						{/pc}
+					</div>
+			
+					<div class="col-md-6 col-sm-6">	
+						{pc:content  action="lists" catid="11" order="id DESC" num="11"}			
+						<div class="well-sm" style="background:#FFF;">	 	
+							<h2 class="h4" style=" border-bottom:#055b95 solid 3px; padding-left:0.5em; padding-bottom:0.3em">
+								<b class="pull-left">幽默开心</b><a style=" font-size:12px; margin-top:5px" class="pull-right" href="/html/wxmw/ymkx/">>>更多</a>
+								<div class="clearfix"></div> 
+							</h2>
+							
+							<ul class="list-unstyled" style="line-height:1.8em">
+							{loop $data $n $r}
+								<li>♦&nbsp;<a class="h6" href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'], 70)}</a></li>
+							{/loop}
+							</ul>
+						</div>
+						{/pc}
+					</div>
+					
+					
+					<div class="col-md-6 col-sm-6">	 
+						{pc:content action="lists" catid="13" order="id DESC" thumb="" moreinfo=""  num="11" }			
+						<div class="well-sm" style="background:#FFF">	 	
+							<h2 class="h4" style=" border-bottom:#055b95 solid 3px; padding-left:0.5em; padding-bottom:0.3em">
+								<b class="pull-left">美容健康</b><a style=" font-size:12px; margin-top:5px" class="pull-right" href="/html/wxmw/mrjk/">>>更多</a>
+								<div class="clearfix"></div> 
+							</h2>
+		 
+							<ul class="list-unstyled" style="line-height:1.8em">
+							{loop $data $n $r}
+								<li>♦&nbsp;<a class="h6" href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],70)}</a></li>
+							{/loop}
+							</ul>
+						</div>
+						{/pc}
+					</div>
+				</div>
+			</div>
+		
+		
+		
+		
+		
+			<div class="col-md-4  well-sm"> 
+				 <div class="row">
+					<div class="col-md-12 col-sm-6">
+						<div class="well-sm" style="border:#CCC solid 1px; background:#F9F9F9; margin-bottom:1em">	
+							<h2 class="h4" style=" border-bottom: #F60 solid 3px;padding-left:0.5em; padding-bottom:0.3em ">
+								<b class="pull-left">热点</b><a style=" font-size:12px; margin-top:5px" class="pull-right" href="">>>更多</a>
+								<div class="clearfix"></div> 
+							</h2>
+
+							<ul class="list-unstyled" style="line-height:1.8em">
+								{pc:content action="hits" catid="6" num="11" order="views DESC"}
+									{loop $data $r}
+										<li>♦&nbsp;<a class="h6" href="{$r[url]}" title="{$r[title]}">{str_cut($r[title],100)}</a></li>
+									{/loop}
+								{/pc}
+							</ul>
+						</div>
+					</div>
+			
+					<div class="col-md-12 col-sm-6">
+						<div class="well-sm" style="border:#CCC solid 1px; background:#F9F9F9">	
+							<h2 class="h4" style=" border-bottom: #F60 solid 3px;padding-left:0.5em; padding-bottom:0.3em">
+								<b class="pull-left">评论</b><a style=" font-size:12px; margin-top:5px" class="pull-right" href="">>>更多</a>
+								<div class="clearfix"></div> 
+							</h2>
+		
+							<ul class="list-unstyled" style="line-height:1.8em">
+								{pc:comment action="bang" num="11" cache="3600"}
+									{loop $data $r}
+										<li>♦&nbsp;<a class="h6" href="{$r[url]}" title="{$r[title]}">{str_cut($r[title],100)}</a></li>
+									{/loop}
+								{/pc}
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container well-sm" style="margin-top:1em; border:solid #CCC 1px;">
+		<h2 class="h4" style=" border-bottom:#055b95 solid 3px; padding-left:0.5em; padding-bottom:0.3em">
+			<b class="pull-left">友情链接</b>&nbsp;<small><a href="{APP_PATH}index.php?m=link&c=index&a=register&siteid={$siteid}">申请友链</a></small><a style=" font-size:12px; margin-top:5px" class="pull-right" href="{APP_PATH}index.php?m=link&siteid={$siteid}" hidefocus="true">>>更多</a>
+			<div  class="clearfix"></div> 
+		</h2>
+					 
+		<ul class="list-unstyled list-inline">
+			{pc:link  action="type_list" siteid="$siteid" linktype="1" order="listorder DESC" num="8" return="pic_link"}
+				{loop $pic_link $v}
+					<li><a href="{$v['url']}" title="{$v['name']}" target="_blank"><img src="{$v[logo]}" width="88" height="31" /></a></li>
+				{/loop}
+			{/pc}					
+		</ul>
+						 
+		{pc:link  action="type_list" siteid="$siteid" order="listorder DESC" num="10" return="dat"}
+		<div class="well-sm" style="padding-bottom:1em">
+			{loop $dat $v}
+				  {if $type==0}
+					<a href="{$v[url]}" target="_blank">{$v[name]}</a> |
+				  {else}
+					<a href="{$v[url]}" target="_blank"><img src="{$v[logo]}" width="88" height="31" style="border: 1px solid #FFBE7A;"></a> 
+				  {/if}
+			{/loop}
+		</div>
+		{/pc}
+	</div>
+
+<!---------------底部开始---------------->
+{template "content","footer"}

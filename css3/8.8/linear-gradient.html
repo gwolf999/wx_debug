@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<style>
+	
+	.linear1{
+		width:300px;
+		height:200px;
+		background:-webkit-linear-gradient(top,red,blue);
+		background:-moz-linear-gradient(top,red,blue);
+	}
+	
+	.linear2{
+		width:300px;
+		height:200px;
+		/*注意: 渐变的颜色位置 都是从起始位置开始计算长度，不是按比例计算*/
+		background:-webkit-linear-gradient(top,red 50%,green 75%,blue 100% )
+	}
+	
+	.linear3{
+		width:300px;
+		height:200px;
+		/*注意:可以使用角度设置渐变方向 角度单位deg 范围0-360 负数也可以*/
+		background:-webkit-linear-gradient(-45deg,orange,purple);
+	}
+	
+	.linear4{
+		
+		height:200px;
+		background:-webkit-linear-gradient(top,red,orange,yellow,green,cyan,blue,purple)
+	}
+	
+	.radial1{
+		width:200px;
+		height:100px;
+		background:-webkit-radial-gradient(center center,red,green);
+	}
+	
+	.radial2{
+		width:200px;
+		height:100px;
+		background:-webkit-radial-gradient(center center,cyan 25%,red 75%,yellow 100%);
+	}
+	
+	.radial3{
+		width:200px;
+		height:100px;
+		/*注意:设定径向渐变的位置可以使用位置单词或者象素表示的单位*/
+		background:-webkit-radial-gradient(20PX 70Px,#000,#fff);
+	}
+	
+	.radial4{
+		width:200px;
+		height:100px;
+		/*注意: 默认的渐变方式是椭圆(如果元素是正方形，将显示圆形渐变)，可以设定为圆形*/
+		background:-webkit-radial-gradient(center center,circle,red,green);
+	}
+	
+	.radial5{
+		width:200px;
+		height:100px;
+		background:-webkit-radial-gradient(60px 40px,cover,red,green);
+	}
+	
+	.radial6{
+		width:200px;
+		height:100px;
+		/*设定形状-大小时不能同时使用形状设置和大小设置*/
+		background:-webkit-radial-gradient(center center,60px 60px,pink,#000);
+	}
+	
+	.repeat-linear{
+		width:200px;
+		height:100px;
+		/*注意：重复线性渐变的最后一个颜色的长度决定渐变的次数*/
+		background:-webkit-repeating-linear-gradient(top,red,green,red 20%);
+	}
+	
+	.repeat-radial{
+		width:600px;
+		height:400px;
+		/*注意：重复径向渐变的最后一个颜色的长度决定渐变的次数*/
+		background:-webkit-repeating-radial-gradient(center center,circle,red,green,red 10%);
+	}
+	
+	.white{
+		width:200px;
+		height:200px;
+		border-radius:100px;
+		box-shadow:-5px 5px 15px #000 ;
+		background:-webkit-radial-gradient(140px 60px,circle,#FFF,#666);
+	}
+</style>
+<!--线性渐变 简单版本-->
+<div class="linear1"></div>
+<hr>
+<!--线性渐变 设定指定颜色的长度-->
+<div class="linear2"></div>
+<hr>
+<!--线性渐变  改变方向-->
+<div class="linear3"></div>
+<hr>
+<!--彩虹渐变 -->
+<div class="linear4"></div>
+<hr>
+<!--径向渐变  简单版本-->
+<div class="radial1"></div>
+<hr>
+<!--径向渐变  指定颜色长度版本-->
+<div class="radial2"></div>
+<hr>
+<!--径向渐变  指定渐变起始位置版本-->
+<div class="radial3"></div>
+<hr>
+<!--径向渐变  指定渐变形状版本-->
+<div class="radial4"></div>
+<hr>
+<!--径向渐变  指定渐变大小（指定渐变结束点）版本-->
+<div class="radial5"></div>
+<hr>
+<!--径向渐变  指定渐变形状大小（指定渐变结束点）版本-->
+<div class="radial6"></div>
+
+<hr>
+<!--重复的线性渐变-->
+<div class="repeat-linear"></div>
+<hr>
+<!--重复的径向渐变-->
+<div class="repeat-radial"></div>
+<hr>
+
+<div class="white"></div>

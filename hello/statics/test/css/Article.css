@@ -1,0 +1,169 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.PicMiddle {
+	vertical-align:middle;
+}
+.ClearFloat {
+	clear:both;
+}
+.Hide {
+	display:none;
+}
+#Top .Toolbar1 {
+	background-image: url(../Images/background_1.png);
+	background-repeat: repeat-x;
+	height: 50px;
+}
+#Top .Toolbar1 .CentreBox {
+	width: 1210px;
+	height: 50px;
+}
+#Top .Toolbar1 .CentreBox .Logo {
+	float: left;
+	height: 50px;
+	width: 166px;
+}
+
+#Top .Toolbar1 .CentreBox .Menu {
+	height: 50px;
+	width: 800px;
+	float: left;
+}
+#Top .Toolbar1 .CentreBox .Menu .List1 {
+	float: left;
+	text-align: center;
+	list-style-type: none;
+	height: 50px;
+	position: relative;
+	left: 20px;
+}
+#Top .Toolbar1 .CentreBox .Menu .List1 li {
+	width: 73px;
+	float: left;
+	height: 50px;
+	line-height: 50px;
+}
+#Top .Toolbar1 .CentreBox .Menu .List1 .Select {
+	background-image: url(../Images/background_3.png);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#Top .Toolbar1 .CentreBox .Menu .List1 a {
+	color: #FFFFFF;
+	font-size: 15px;
+}
+
+
+#Top .Toolbar1 .CentreBox .Menu .List2 {
+	float: right;
+	position: relative;
+	right: 20px;
+	list-style-type: none;
+	height: 50px;
+	text-align: center;
+}
+#Top .Toolbar1 .CentreBox .Menu .List2 li {
+	float: left;
+	width: 63px;
+	line-height: 50px;
+}
+#Top .Toolbar1 .CentreBox .Menu .List2 a {
+	color: #FFFFFF;
+}
+
+
+
+
+#Top .Toolbar1 .CentreBox .UserInfo {
+	height: 50px;
+	width: 180px;
+	float: left;
+}
+#Top .Toolbar1 .CentreBox .UserInfo .NickName {
+	background-image: url(../Images/Arrow_2.png);
+	background-repeat: no-repeat;
+	text-align: right;
+	padding-right: 25px;
+	background-position: 160px 8px;
+	position: relative;
+	top: 17px;
+	overflow: hidden;
+}
+#Top .Toolbar1 .CentreBox .UserInfo .NickName a {
+	color: #FFFFFF;
+}
+#Top .Toolbar1 .CentreBox .Setting {
+	float: left;
+	height: 16px;
+	width: 16px;
+	position: relative;
+	top: 17px;
+	background-image: url(../Images/Setting.png);
+	background-repeat: no-repeat;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+#Top .Toolbar1 .CentreBox .Setting a {
+	height: 16px;
+	width: 16px;
+	display: block;
+}
+
+
+#Top .Toolbar1 .CentreBox .Message {
+	height: 16px;
+	width: 16px;
+	float: left;
+	position: relative;
+	top: 17px;
+	background-image: url(../Images/Message.png);
+	background-repeat: no-repeat;
+	margin-left: 10px;
+}
+#Top .Toolbar1 .CentreBox .Message a {
+	height: 16px;
+	width: 16px;
+	display: block;
+}
+#Top .Toolbar2 {
+	background-image: url(../Images/background_4.png);
+	background-repeat: repeat-x;
+	height: 39px;
+	clear: both;
+}
+#Top .Toolbar2 .CentreBox {
+	height: 39px;
+	width: 1210px;
+}
+#Top .Toolbar2 .CentreBox .Menu {
+	position: relative;
+	overflow: hidden;
+	height: 39px;
+	width: 910px;
+	left: 180px;
+	float: left;
+}
+#Top .Toolbar2 .CentreBox .Menu ul {
+	list-style-type: none;
+	height: 39px;
+	position: absolute;
+}
+#Top .Toolbar2 .CentreBox .Menu ul li {
+	float: left;
+	height: 39px;
+	width: 75px;
+	text-align: center;
+	line-height: 39px;
+}
+#Top .Toolbar2 .CentreBox .Menu ul li a {
+	color: #434343;
+	font-size: 12px;
+}
+#Top .Toolbar2 .CentreBox .Menu ul .Select {
+	background-image: url(../Images/background_5.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+}

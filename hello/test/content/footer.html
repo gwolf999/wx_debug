@@ -1,0 +1,20 @@
+	<div class="container-fluid" style="background: #FDFDFD; margin-top:1em; border-top:#CCC solid 1px; ">
+		<div class="container text-center" style="line-height:2em; padding-top:1em">
+			
+			{loop subcat(56) $r}
+				<a href="{$r[url]}" target="_blank">{$r[catname]}</a> |  
+			{/loop}
+		
+			<a href="{APP_PATH}index.php?m=link" target="_blank">友情链接</a>
+			<br />
+			Powered by <strong><a href="http://www.lampbrother.net.com" target="_blank">兄弟连</a></strong> <em>{get_pc_version(1)}</em> &copy; 2014 <img src="{IMG_PATH}copyright.gif"/>
+
+		</div>
+	</div>
+
+		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+		<script src="{WEB_PATH}statics/test/js/bootstrap.min.js"></script>
+		
+
+	</body>
+</html>

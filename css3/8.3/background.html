@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+
+<style>
+	/*多背景图片设定*/
+	.one{
+		width:500px;
+		height:500px;
+		border:1px solid red;
+		background:url(./img/1.jpg) no-repeat,
+				   url(./img/2.jpg) no-repeat top center,
+				   url(./img/3.jpg) no-repeat top right,
+				   url(./img/4.jpg) no-repeat center left,
+				   url(./img/5.jpg) no-repeat center center,
+				   url(./img/6.jpg) no-repeat center right,
+				   url(./img/7.jpg) no-repeat bottom left,
+				   url(./img/8.jpg) no-repeat bottom center,
+				   url(./img/9.jpg) no-repeat bottom right;
+	}
+	
+	/*设置背景图片的开始参考点*/
+	.two{
+		width:300px;
+		height:300px;
+		padding:50px;
+		border:50px solid red;
+		background:url(./img/agltu.jpg) no-repeat;
+		background-origin: content-box ;
+	}
+	
+	/*设定背景图片的切割方式*/
+	.three{
+		width:300px;
+		height:300px;
+		border:50px solid rgba(255,0,0,0.5);
+		padding:50px;
+		
+		background:url(./img/dfj.jpg) no-repeat;
+		background-origin:border-box;
+		background-clip:CONTENT-box;
+		
+	}
+	
+	/*背景的文字剪裁方式*/
+	.four{
+		width:300px;
+		height:300px;
+		line-height:300px;
+		border:1px solid red;
+		background:url(./img/ymd.jpg);
+		font-size:100px;
+		-webkit-background-clip:text;
+		color:transparent;
+	}
+	/*设置背景图片的大小*/
+	.five{
+		width:300px;
+		height:300px;
+		border:1px solid red;
+		background:url(./img/fcy.jpg) no-repeat;
+		background-size:cover;
+	}
+	
+</style>
+<!--多背景图片设定-->
+<div class="one"></div>
+<hr>
+<!--背景图片的参考点的设置-->
+<div class="two"></div>
+<hr>
+<div class="three"></div>
+<hr>
+<!--背景的文字剪裁方式-->
+<div class="four">
+	雅蠛蝶
+</div>
+<hr>
+<!--设置背景图片的大小-->
+<div class="five"></div>

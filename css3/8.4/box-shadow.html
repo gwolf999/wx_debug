@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+
+<style>
+	.one,.six{
+		width:200px;
+		height:100px;
+		background:cyan;
+		/*简单的盒子阴影*/
+		box-shadow: 10px 10px ;
+		
+	}
+	
+	
+	.two{
+		width:200px;
+		height:100px;
+		background:cyan;
+		box-shadow:10px 10px #abcdef; 
+	}
+	
+	.three{
+		width:200px;
+		height:100px;
+		background:cyan;
+		box-shadow:10px 10px 10px #ABCDEF
+	}
+	
+	.four{
+		width:200px;
+		height:100px;
+		background:cyan;
+		box-shadow:0px 0px 10px 10px red;
+	}
+	
+	.five{
+		width:200px;
+		height:100px;
+		background:cyan;
+		box-shadow:10px 10px inset;
+	}
+</style>
+<!--简单的盒子阴影-->
+<div class="one"></div>
+<hr>
+<!--有颜色的阴影-->
+<div class="two"></div>
+<hr>
+<!--有颜色的模糊的阴影-->
+<div class="three"></div>
+<hr>
+<div class="four"></div>
+<hr>
+<!--简单的盒子阴影-->
+<div class="one"></div>
+<hr>
+<!--简单的盒子内置阴影-->
+<div class="five"></div>
+<hr>
+<!--按钮-->
+<div class="six"></div>
+<script>
+	var six=document.getElementsByClassName('six')[0];
+	six.onmousedown=function(){
+		this.className='five';
+	}
+	six.onmouseup=function(){
+		this.className='six';
+	}
+</script>

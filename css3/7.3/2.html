@@ -1,0 +1,62 @@
+<!doctype html>
+<style>
+    /*属性选择器*/
+    li[class]{color:red}
+    li[id]{color:green}
+    li[title]{color:blue}
+    
+    /*选中指定属性名=指定属性值的元素*/
+    li[class='xxj']{font-weight:800}
+    
+    /*选中指定属性名称以指定字符结尾的元素*/
+    .two li[class$='m']{background:red}
+    .two li[class$='y']{background:pink}
+    
+    /*选中指定属性名称以指定字符开头的元素*/
+    .two li[class^='s']{border:5px solid green}
+    
+    /*选中指定属性名称包含指定字符的元素*/
+    .two li[class*='m']{font-style:italic}
+    
+    /*选中指定属性名称以指定字符开头，并且指定字符之后带-的元素*/
+    .two li[title|='水']{font-size:26px}
+    
+    /*选中指定属性名称由空格分开，并且属性包含指定val（不相同）的元素/
+    .two li[class~='cyy']{font-size:26px}
+    
+    /*实例*/
+    .three li a[href$='pdf']:before{content:url(./icon/pdf.JPG)}
+    .three li a[href$='txt']:before{content:url(./icon/txt.JPG)}
+    .three li a[href$='avi']:before{content:url(./icon/avi.JPG)}
+    .three li a[href$='doc']:before{content:url(./icon/doc.JPG)}
+    .three li a[href$='pdf']:before{content:url(./icon/pdf.JPG)}
+</style>
+<ul>
+    <li class="demo">西游记</li>
+    <li title="三国演义">三国演义</li>
+    <li id="test">红楼梦</li>
+    <li title="水浒传">水浒传</li>
+    <li title="金瓶梅">金瓶梅</li>
+    <li class="xxj">西厢记</li>
+    <li class="xxj">西厢记</li>
+</ul>
+
+<ul class="two">
+    <li class="demo" title="水-货" >西游记</li>
+    <li title="三国演义" class="sgyy">三国演义</li>
+    <li id="test" class="hlm">红楼梦</li>
+    <li title="水-浒-传" class="shz">水浒传</li>
+    <li title="金-瓶-梅" class="jpm">金瓶梅</li>
+    <li class="xxj cyy">西厢记</li>
+    <li class="xxj">西厢记</li>
+</ul>
+
+
+<ul class="three">
+    <li class="demo"><a href="xyj.pdf">西游记</a></li>
+    <li title="三国演义"><a href="sgyy.txt">三国演义</a></li>
+    <li id="test"><a href="hlm.doc">红楼梦</a></li>
+    <li title="水浒传"><a href="shz.doc">水浒传</a></li>
+    <li title="金瓶梅"><a href="jpm.avi">金瓶梅</a></li>
+    <li class="xxj"><a href="sgyy.txt">西厢记</a></li>
+</ul>

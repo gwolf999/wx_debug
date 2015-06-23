@@ -1,0 +1,108 @@
+charset "utf-8";										/* 设置文档字符集				*/
+body {					 							/* 整个页面的属性设定			*/
+     background-color: #CCCCCC;		 				/* 背景色						*/
+     font-family: Geneva, sans-serif;    			/* 可用字体					*/
+     margin: 10px auto; 		 					/* 页边空白					*/
+     max-width: 800px;
+     border: solid;			 						/* 边缘立体					*/
+     border-color: #FFFFFF; 		 				/* 边缘颜色					*/
+
+ }
+ 
+ a { text-decoration:none; color:#FFF; }	 			/* 整个body页面的p和a适用          */
+ p { color: #F36; }
+ ul { margin:0px; padding:0px; list-style:none;} 
+ 
+ h2,h3 { 											/* 设定整个body内的h2和h3的共同属性*/
+     text-align: center;		 					/* 文本居中					*/
+ }
+  
+ header { 											/* 整个body页面的header适用         */
+     background-color: #F47D31;
+     color: #FFFFFF;
+     text-align: center;
+     margin-bottom:15px;
+ }
+  
+ article {				 								/* 整个body页面的article适用        */
+     background-color: #eee;
+ }
+  
+ section,aside,header,footer {							/* 几个大区域使用圆角和阴影          */	
+	-webkit-box-shadow: 0px 0px 6px #757575;		/* must use for IE                   */
+	-moz-box-shadow: 0px 0px 6px #757575;
+	box-shadow: 0px 0px 6px #757575;
+	-moz-border-radius: 2px; 						/* Firefox                           */
+	-webkit-border-radius: 2px; 					/* Safari, Chrome                    */
+	border-radius: 2px; 							
+ }
+  
+ nav,article{ 											/* 共同属性                          */
+     margin: 10px;
+     padding: 10px;
+     display: block;
+ }
+  
+ header#page_header nav {		 						/* header#page_header nav的属性      */
+     padding: 0 0 10px 0;
+ }
+  
+ header#page_header nav ul li { 							/* header#page_header nav ul li属性  */
+     padding: 0;
+     margin: 0 20px 0 0;
+     display: inline;
+ }
+  
+ section#posts { 										/* #posts 的section属性			  */
+     display: block;
+     float: left;
+     width: 70%;
+     height: auto;
+     background-color: #F69;
+     margin-bottom: 15px;
+ }
+  
+ section#posts article footer { 							/* section#posts article footer属性  */
+     background-color: #039;
+     clear: both;
+     height: 50px;
+     display: block;
+     color: #FFFFFF;
+     text-align: center;
+     padding: 15px;
+ }
+  
+ section#posts aside { 									/* section#posts aside属性           */
+     background-color: #069;
+     display: block;
+     float: right;
+     width: 35%;
+     margin-left: 5%;
+     font-size: 20px;
+     line-height: 40px;
+     margin-bottom:20px;
+ }
+  
+ aside#sidebar {			 							/* aside#sidebar属性                 */
+     display: block;
+     float: right;
+     width: 28%;
+     height: auto;
+     background-color: #699;
+ }
+ 
+ aside#sidebar  li {									/* li 一起使用两张背景图片 		   */
+	 padding:5px 15px;
+	 background:url(li_icon.gif) no-repeat center left, url(dot.gif) repeat-x bottom;  
+ }
+  
+ footer#page_footer { 								/* footer#page_footer属性		   */
+     display: block;
+     clear: both;
+     width: 100%;
+     display: block;
+     color: #FFFFFF;
+     text-align: center;
+     background-color: #06C;
+ }
+

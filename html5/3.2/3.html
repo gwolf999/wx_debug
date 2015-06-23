@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<!--使用前-->
+<form action="1.php" method="get">
+    <input type="text" name="username" value="" placeholder="请输入名字" autofocus />
+    <button type="submit">提交</button>
+</form>
+<!--使用后-->
+<form action="1.php" method="get" id="myform"></form>
+<input type="text" name="username" value="" form="myform" />
+<button type="submit" form="myform">提交</button>
+
+<hr>
+<form action="#" method="get">
+    数值<input type="number" name="no" value="0" max="10" min="5"><br>
+    滑块<input type="range" name="range" value="0" max="10" min="8"><br>
+    日期<input type="date" name="date" max="2014-05-20"  min="2014-05-10" value="0"><br>
+    时间<input type="time" name="time" max="22:00"  min="08:00" value="0"><br>
+    <button type="submit">提交</button>
+</form>
+<!--表单验证相关属性-->
+<hr>
+<form action="1.php" method="get"  target="_blank">
+    用户名:<input type="text" name="username" value="" required /><br>
+    电话:<input type="tel" name="tel" value="" pattern="\d{11}"／><br>
+    电话:<input type="tel" name="tel" value="" pattern="^1((3\d)|(47)|(5[0-35-9])|(8[0-35-9]))\d{8}$"／><br>
+    数值<input type="number" name="no" value="" step="5" ><br>
+    多文件上传:<input type="file" name="face" multiple value="" /><br>
+    <button type="submit">提交给form标签的action属性</button><br>
+    <button type="submit" formaction="2.php" formmethod="post">提交给当前按钮定义的formaction属性</button><br>
+    <button type="submit" formaction="3.php" formtarget="_self" formnovalidate>提交给当前按钮定义的formaction属性</button><br>
+</form>
+

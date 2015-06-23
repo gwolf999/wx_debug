@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>html4 DIV布局示范</title>
+    <style>
+        /*我猜测为何两个背景div，news及section 第一个是为了清除所有外边距预设的格式*/
+    div#news{width: 660px;height:400px;margin:0 auto;background-color: #8E9CB2}/*宽度660px，外边距自动;单纯的div元素的id选择器*/
+        div.section{width: 100%;height:360px;background-color: #1CC200}/*单纯的div元素的类选择器*/
+         div.article {width:500px;float:left}/*左边文字区域宽度为500*/
+         div.header{width: 100%;text-align: center}
+         div.content {width:100%;background:#ddd}
+         div.footer  {width:100%;background:#ddd}
+    div.aside   {width:150px;float:right}
+    </style>
+</head>
+<body>
+<div id="news">
+    <div class="section">
+     <div class="article">
+         <div class="header">
+             <h1>Div 布局示范</h1>
+             <p>发表于2014年09月10日</p>
+         </div>
+         <div class="content">
+             <p>内容文本一等等.</p>
+             <p>内容文本二等等.</p>
+             <p>内容文本三等等.</p>
+         </div>
+         <div class="footer">
+             <p>Tags: HMTL, 代码, 演示</p>
+         </div>
+     </div>
+        <div class="aside">
+            <div class="header">
+                <h1>附属信息</h1>
+            </div>
+            <div class="content">
+                <p>内容文本等等.</p>
+                <p>内容文本等等.</p>
+                <p>内容文本等等.</p>
+                <p>内容文本等等.</p>
+            </div>
+            <div class="footer">
+                <p>Tags: HMTL,演示</p>
+            </div>
+        </div>
+    </div>
+<!--<p>这是在外面的div</p>-->
+</div>
+</body>
+</html>

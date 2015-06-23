@@ -1,0 +1,32 @@
+<!doctype html>
+<style>
+    /*选中指定元素内部一行内容当做元素处理(不是真正的元素/伪对象)*/
+    p::first-line{color:#f90}
+    /*选中第一行内部的第一行字符当做元素处理(不是真正的元素/伪对象)*/
+    p::first-letter{font-size:50px}
+    
+    /*在选中的元素的内容前面添加内容*/
+    p::before{content:'☆☆☆☆☆'}
+    /*在选中的元素的内容后面添加内容*/
+    p::after{content:'★★★★★'}
+    
+    /*选中 用于选中的内容当做元素处理*/
+    p::selection{background:red;COLOR:#FFF}
+    
+    
+    div a:link{color:green}
+</style>
+<p>
+    唧唧复唧唧，<br>
+    木兰当户织，<br>
+    不闻机杼声，<br>
+    惟闻女叹息。<br>
+    问女何所思，<br>
+    问女何所忆。<br>
+    女亦无所思。<br>
+    女亦无所忆。<br>
+</p>
+
+<div>
+    <a href="#">唧唧复唧唧</a>
+</div>

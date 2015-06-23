@@ -1,0 +1,55 @@
+<!doctype html>
+<style>
+    /*父子选择器*/
+    .one>li{border:1px solid green}
+    .one>li>ul>li{border:1px solid red}
+    
+    /*相邻选择器*/
+    h2:hover+ul{background:red}
+    
+    /*兄弟选择器*/
+    .one>li>ul>li:hover~li{font-weight:800}
+</style>
+<ul class="one">
+    <li>
+        <h2>五虎上将</h2>
+        <ul>
+            <li>张飞</li>
+            <li>关羽</li>
+            <li>赵云</li>
+            <li>马超</li>
+            <li>黄忠</li>
+        </ul>
+    </li>
+    <li>
+        <h2>五虎上将</h2>
+        <ul>
+            <li>张飞</li>
+            <li>关羽</li>
+            <li>赵云</li>
+            <li>马超</li>
+            <li>黄忠</li>
+        </ul>
+    </li>
+    <li>
+        <h2>五虎上将</h2>
+        <ul>
+            <li>张飞</li>
+            <li>关羽</li>
+            <li>赵云</li>
+            <li>马超</li>
+            <li>黄忠</li>
+        </ul>
+    </li>
+    <li>
+        <h2>五虎上将</h2>
+        <ul>
+            <li>张飞</li>
+            <li>关羽</li>
+            <li>赵云</li>
+            <li>马超</li>
+            <li>黄忠</li>
+        </ul>
+    </li>
+    
+</ul>

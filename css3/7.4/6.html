@@ -1,0 +1,17 @@
+<!doctype html>
+<style>
+    p:empty{width:300px;height:100px;border:1px solid red}
+    
+    p:empty::before{content:'暂无数据'}
+    
+    html:root{border:2px solid red}
+</style>
+<!--没有任何内容的p标签-->
+<p></p>
+<hr>
+<!--具有内容字符的p标签-->
+<p>字符</p>
+<hr>
+<!--具有标签的p标签-->
+<p><b></b></p>
+<hr>

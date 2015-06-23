@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="not-ie" lang="en">
+<!--<![endif]-->
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}{$SEO['site_title']}</title>
+		<meta name="keywords" content="{$SEO['keyword']}">
+		<meta name="description" content="{$SEO['description']}">
+
+		<!-- 新 Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="{WEB_PATH}statics/test/css/bootstrap.min.css">
+		<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+		<link rel="stylesheet" href="{WEB_PATH}statics/test/css/bootstrap-theme.min.css">
+
+		<script src="{WEB_PATH}statics/test/js/jquery.min.js"></script>
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="{WEB_PATH}statics/test/js/html5shiv.min.js"></script>
+			<script src="{WEB_PATH}statics/test/js/respond.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			
+			*{margin:0;padding:0;list-style-type:none;}
+			body{ color:#666; font-family:'微软雅黑' Arial, Helvetica, sans-serif ; padding-top:45px;}
+			a,img{border:0;}
+			a{ color:#6D6D6D }
+			a:hover{ color:#039}
+			.nav-top{  padding:0.5em 0;}
+			.nav-top table tr td{ border-right: #1B6FA3 solid 1px;}
+			.nav-top table tr .boder{ border:none; padding:0 1em 0 1em;}
+			.nav-top table tr .boder a{ color:#FFCC33; font-weight:bold}
+			.nav-top a:hover{ color:#FFCC33;}
+			.nav-top a{ color:#FFF; text-decoration:none; font-family:"微软雅黑";}
+			.nav-top ul{ line-height:1.5em; padding-top:10px;}
+			
+			
+			
+		</style>
+	</head>
+	<body>
+		<!-- 页面的头部， 固定的不动 -->
+		<div class="container-fluid navbar-fixed-top hidden-xs" style=" border-bottom:#CCC dotted 1px; background:#F7F7F7">
+			<div class="container">
+				<div class="pull-left h6">欢迎光临峰哥的网站，峰哥好文章！</div>
+				<div class="pull-right h6"><div style="margin-top:-5px"><script type="text/javascript">document.write('<iframe src="{APP_PATH}index.php?m=member&c=index&a=mini&forward='+encodeURIComponent(location.href)+'&siteid={get_siteid()}" allowTransparency="true"  width="300" height="20" frameborder="0" scrolling="no"></iframe>')</script></div>
+				</div>
+			</div>
+		</div>
+		<!-- header部分 -->
+		<div class="container">
+			<div class="row">
+				<!--  md-3 -->
+				<div class="col-md-3 text-center">
+					<a href="http://yun.itxdl.cn" target="_blank"><img width="200"  style="padding:1.0em 0" src="http://yun.itxdl.cn/files/system/logo_1405584879.png?2.0.3" alt="峰哥的网站，峰哥好文章"/></a>
+				</div>
+				<!--  md-5 -->
+				<div class="col-md-5" style="padding:1.5em 0 1.5em 0">
+					<form action="{APP_PATH}index.php" method="get" target="_blank" class="input-group" >
+						<input type="hidden" name="m" value="search"/>
+						<input type="hidden" name="c" value="index"/>
+						<input type="hidden" name="a" value="init"/>
+						<input type="hidden" name="typeid" value="{$typeid}" id="typeid"/>
+						<input type="hidden" name="siteid" value="{$siteid}" id="siteid"/>
+						<input type="text" class="form-control" name="q" id="q" placeholder="输入 回车搜索" autofocus x-webkit-speech />
+      
+						<span class="input-group-btn">
+							<input type="submit" value="搜 索" class="btn btn-warning" />
+						</span>
+    
+					</form>
+				</div>
+				<!--  md-4 -->
+				<div class="col-md-4">
+					<img class="pull-right hidden-xs  hidden-sm"  width="205" height="60" src="http://www.lampbrother.net/php/statics/images/lamp/PHP_dh.png">
+				</div>
+			</div>
+		</div>
+		
+		
+		<!--  页面导航 -->
+		<div class="container-fluid hidden-xs" style="background: #055b95">
+			<div class="container nav-top">
+				<table width="100%" border="0">
+					<tr>
+						<td style="padding-right:1em;width:60px;"><a class="h4" href="http://yun.itxdl.cn/">网站</br>首页</a></td>
+						{pc:content  action="category" siteid="1" catid="0" num="20" where="ismenu=1"}
+							{loop $data $v}
+							<td class="boder" style="30px;"><a class="h4" target="_blank" href="{$v[url]}">{$v[catname]}</a></td>
+							<td>	
+								<ul class="list-unstyled list-inline">
+									{loop subcat($v['catid']) $vv}
+										<li><a  target="_blank" href="{$vv[url]}">{$vv[catname]}</a></li>
+									{/loop}
+								</ul>
+							</td>
+							{/loop}
+						{/pc}
+					</tr>
+				</table>
+			</div>
+		</div>
+		
+		<!-----手机导航微信------->
+		<nav class="navbar navbar-default navbar-fixed-top visible-xs" role="navigation">
+			<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="http://yun.itxdl.cn">云课堂</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				{pc:content action="category" catid="0" order="listorder DESC"} 
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="http://yun.itxdl.cn">首页</a></li>
+						{loop $data $r} 
+						<li class="dropdown">
+							<a href="{$r[url]}" class="dropdown-toggle" data-toggle="dropdown">{$r[catname]} <span class="caret"></span></a>
+							{pc:content action="category" catid="$r[catid]" order="listorder DESC"} 
+							<ul class="dropdown-menu" role="menu">
+								{loop $data $v} 
+									<li><a href="{$v[url]}">{$v[catname]}</a></li>
+								{/loop}
+							</ul>
+							{/pc}
+						</li>
+						{/loop}
+					</ul>
+				{/pc}
+			</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+		</nav>
+		
+
+
+		
+		

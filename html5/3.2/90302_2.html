@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Html5 Input 类型演示</title>
+<hgroup>　　<h1>第一行大标题 </h1>
+    　　<h2> 第二行小标题 </h2></hgroup>        　　
+</head>
+<body>
+<form action="#" method="post"><!--#应该是本页面-->
+邮箱：<input type="email" name="myemail" value="caotao30@126.com"> <br>
+    网址：<input type="url" name="myurl" value="www.ifeng.com"><br>
+    年龄：<input type="number" name="myage" value="40" size="6"><br>
+    <!--HTML5引用的range类型可以创建滑块，它接受min, max, step和value属性 可以使用css的:before和:after来显示min和max的值 搜狗笔记记录-->
+    滑块：<input type="range" id="myrange" value="40" min="30" max="120" step="5" /><span>0</span><br>
+    <!--滑动滑块，右边显示数值-->
+    <script>
+        var range=document.getElementById('myrange');//获得这么DOM的对象
+        var flag=false;
+        range.onmousedown=function(){
+             flag=true;
+        }
+        range.onmouseup=function(){
+            flag=false;
+        }
+        range.onmousemove=function(){
+            if(flag){
+          /*    nextSibling 属性可返回某个元素之后紧跟的元素（处于同一树层级中）。如果无此节点，则属性返回 null。*/
+                this.nextSibling.innerHTML=this.value;
+            }
+        }
+    </script>
+
+    <!--滑块表单-->
+    滑块:<input type="range" id="range" name="fen1" max="100" value="0" />
+    <!--仅opear浏览器有效-->
+    <output onforminput="value=fen1.value" >0</output>
+    <br>
+    <!--搜索表单-->
+    搜索：<input type="search" name="keywords" value="javascript" results="n" /><br>
+    <!--颜色表单-->
+    颜色：<input type="color" name="face" value="red" /><br>
+    <!--电话表单-->
+    电话：<input type="tel" name="myphone" value="18979579158" /><br>
+    <!--日期表单-->
+    日期：<input type="date" name="date" value="" /><br>
+    <!--时间表单-->
+    时间：<input type="time" name="time" value="" /><br>
+    <!--周表单-->
+    周选取：<input type="week" name="week" value="" /><br>
+    <!--月表单-->
+    月选取：<input type="month" name="month" value="" /><br>
+    <!--完整时间表单-->
+    完整时间：<input type="datetime" name="datetime" value="" /><br>
+
+
+
+<botton type="submit">提交</botton>
+
+<input type="submit" name="上交1" value="上交2">
+
+</form>
+
+</body>
+</html>

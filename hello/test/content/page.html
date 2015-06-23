@@ -1,0 +1,23 @@
+{template "content","header"}
+	<div class="container">
+		<div class="row">	
+			<div class="col-md-3">
+				<h1>关于我们</h1>
+				<ul class="nav nav-pills nav-stacked" role="tablist">
+					{loop $arrchild_arr $cid}
+						<li role="presentation" {if $catid==$cid} class="active"{/if}><a href="{$CATEGORYS[$cid][url]}">{$CATEGORYS[$cid][catname]}</a></li>
+					{/loop}
+				</ul>
+				<div class="bottom"></div>
+			</div>
+		  <div class="col-md-9">
+				<img src="{IMG_PATH}v9/about_ad.png" width="659" height="171" />
+				<h1>{$title}</h1>
+				<div class="content">
+						{$content}
+				</div>
+			</div>
+		
+		</div>
+	</div>
+{template "content","footer"}

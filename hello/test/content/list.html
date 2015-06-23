@@ -1,0 +1,53 @@
+{template "content","header"}
+<div class="container">
+	<div class="row">
+		<p class="well-sm"><strong>当前位置:</strong><a href="{siteurl($siteid)}">首页</a><span> > </span>{catpos($catid)} 列表</p>
+    	<div class="col-md-8 col-sm-12">
+        	<div class="well-sm" style="border:#CCC solid 1px;">
+            	{pc:content action="lists" catid="$catid" num="20" order="id DESC" page="$page"}
+					<ul class="list-unstyled" style="line-height:2.5em">
+					{loop $data $r}
+						<li>·<a style=" font-weight:bold;" href="{$r[url]}" target="_blank"{title_style($r[style])}>{$r[title]}</a><span class="pull-right hidden-xs">{date('Y-m-d H:i:s',$r[inputtime])}</span></li>
+						{if $n%5==0}<li class="bk20 hr"></li>{/if}
+					{/loop}
+					</ul>
+			
+					<ul class="pagination pagination-sm text-center">
+						<li><a href="#">&laquo;{$pages}</a></li>
+					</ul>
+				{/pc}
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12 hidden-xs">
+			<div class="well-sm" style="border:#CCC solid 1px; margin-bottom:1em">
+				<h1 class="h4" style=" border-bottom: #F60 solid 3px;padding-left:0.5em; padding-bottom:0.3em ">
+					<b>频道总排行</b>
+				</h1>
+          
+				<ul class="list-unstyled" style="line-height:1.8em">
+				{pc:content  action="hits" catid="$catid" num="10" order="views DESC" cache="3600"}
+					{loop $data $r}
+						<li>▷<a class="h6" href="{$r[url]}" target="_blank" title="{$r[title]}">{str_cut($r[title], 50, '')}</a></li>
+					{/loop}
+				{/pc}
+				</ul>
+			</div>
+      
+            <div class="well-sm" style="border:#CCC solid 1px; margin-bottom:1em">
+				<h1 class="h4" style=" border-bottom: #F60 solid 3px;padding-left:0.5em; padding-bottom:0.3em ">
+					<b>频道本月排行</b>
+				</h1>
+				
+				<ul class="list-unstyled" style="line-height:1.8em">
+				{pc:content action="hits" catid="$catid" num="10" order="monthviews DESC" cache="3600"}
+					{loop $data $r}
+						<li><span class="badge">{number_format($r[monthviews])}</span>&nbsp;&nbsp;<a class="h6" href="{$r[url]}"{title_style($r[style])} class="title" title="{$r[title]}">{str_cut($r[title],56,'...')}</a></li>
+					{/loop}
+				{/pc}
+				</ul>
+			</div>
+        </div>
+    </div>
+</div>
+<!---------------底部开始---------------->
+{template "content","footer"}

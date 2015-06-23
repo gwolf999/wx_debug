@@ -1,0 +1,13 @@
+@charset "utf-8";
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;}
+/* container */
+.container1{width:373px;height:315px;}
+.container1 a img{width:373px;height:315px}
+.container1 img{border-bottom-style:none;border-right-style:none;border-top-style:none;border-left-style:none}
+.td_f a img{padding-bottom:0px;margin:0px;padding-left:0px;padding-right:0px;padding-top:0px}
+.num{position:absolute;width:90px;float:right;top:280px;left:270px}
+.num li{text-align:center;line-height:15px;margin:1px;width:15px;font-family:arial;background:url(../images/flashbutton.gif) no-repeat -15px 0px;float:left;height:15px;color:#86a2b8;font-size:12px;cursor:pointer}
+.num li.on{line-height:15px;width:15px;background:url(../images/flashbutton.gif) no-repeat;height:15px;color:#ffffff}
+
+
